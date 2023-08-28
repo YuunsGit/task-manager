@@ -27,6 +27,7 @@ https://tasks.yuuns.tech/api/tasks/9
 - **Prisma** as an ORM
 - **Joi** for input validation
 - **Jest** and **Supertest** for unit testing
+- **Render** for deployment
 
 ## Installation:
 1. Clone the repository
