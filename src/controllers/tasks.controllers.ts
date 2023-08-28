@@ -30,7 +30,9 @@ const getTask = async (req: Request, res: Response, next: NextFunction) => {
         });
 
         if (!task) {
-            return next();
+            const err = new Error("Task does not exist");
+            res.status(404);
+            return next(err);
         }
 
         res.status(200).json(task);
@@ -66,7 +68,9 @@ const updateTask = async (req: Request, res: Response, next: NextFunction) => {
         });
 
         if (!task) {
-            return next();
+            const err = new Error("Task does not exist");
+            res.status(404);
+            return next(err);
         }
 
         res.status(200).json(task);
@@ -86,7 +90,9 @@ const deleteTask = async (req: Request, res: Response, next: NextFunction) => {
         });
 
         if (!task) {
-            return next();
+            const err = new Error("Task does not exist");
+            res.status(404);
+            return next(err);
         }
 
         res.status(204).send();

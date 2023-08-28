@@ -15,6 +15,9 @@ The API has the following endpoints:
 | PUT    | api/tasks/id | Update an existing task |
 | DELETE | api/tasks/id | Delete an existing task |
 
+### Example endpoint:
+https://tasks.yuuns.tech/api/tasks/9
+
 ## Stack:
 
 - **Node.js** as a runtime environment

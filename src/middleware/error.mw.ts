@@ -10,7 +10,7 @@ const handleError = (err: Error, req: Request, res: Response, next: NextFunction
 
 const handle404 = (req: Request, res: Response, next: NextFunction) => {
     res.status(404);
-    const error = new Error("Task does not exist");
+    const error = new Error("404 Not Found");
     next(error);
 };
 
