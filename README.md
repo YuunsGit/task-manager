@@ -35,5 +35,8 @@ https://tasks.yuuns.tech/api/tasks/9
 3. Create `.env` file with provided `DATABASE_URL`
 4. Run the application with `npm run dev`
 
+## Postman collection:
+https://github.com/YuunsGit/task-manager/blob/main/postman_collection.json
+
 ## Test:
 Run `npm test` to run tests.
