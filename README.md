@@ -32,7 +32,7 @@ The API has the following endpoints:
 4. Run the application with `npm run dev`
 
 ## Postman collection:
-https://github.com/YuunsGit/task-manager/blob/main/postman_collection.json
+https://documenter.getpostman.com/view/19399613/2s9Y5ZvMbe
 
 ## Test:
 Run `npm test` to run tests. **Jest** and **Supertest** have been used for unit testing. Tests cover invalid/empty inputs and successful queries.
