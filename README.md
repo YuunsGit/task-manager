@@ -14,6 +14,9 @@ The API has the following endpoints:
 | PUT    | api/tasks/id | Update an existing task | https://tasks.yuuns.tech/api/tasks/9                             |
 | DELETE | api/tasks/id | Delete an existing task | https://tasks.yuuns.tech/api/tasks/9                             |
 
+## Postman collection:
+https://documenter.getpostman.com/view/19399613/2s9Y5ZvMbe
+
 ## Stack:
 
 - **Node.js** as a runtime environment
@@ -30,9 +33,6 @@ The API has the following endpoints:
 2. Install the dependencies with `npm install`
 3. Create `.env` file with provided `DATABASE_URL`
 4. Run the application with `npm run dev`
-
-## Postman collection:
-https://documenter.getpostman.com/view/19399613/2s9Y5ZvMbe
 
 ## Test:
 Run `npm test` to run tests. **Jest** and **Supertest** have been used for unit testing. Tests cover invalid/empty inputs and successful queries.
