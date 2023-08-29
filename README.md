@@ -1,22 +1,18 @@
 # Task Management API Documentation
 
-This documentation provides an overview of the Task Management API https://tasks.yuuns.tech. The API allows users to
-manage tasks by providing endpoints for creating, retrieving, updating, and deleting tasks.
+This documentation provides an overview of the Task Management API https://tasks.yuuns.tech. The API allows users to manage tasks by providing endpoints for creating, retrieving, updating, and deleting tasks.
 
 ## Endpoints
 
 The API has the following endpoints:
 
-| Method | Endpoint     | Description             |
-|--------|--------------|-------------------------|
-| GET    | api/tasks    | Get all tasks           |
-| GET    | api/tasks/id | Get a specific task     |
-| POST   | api/tasks    | Create a new task       |
-| PUT    | api/tasks/id | Update an existing task |
-| DELETE | api/tasks/id | Delete an existing task |
-
-### Example endpoint:
-https://tasks.yuuns.tech/api/tasks/9
+| Method | Endpoint     | Description             | Example                                                          |
+|--------|--------------|-------------------------|------------------------------------------------------------------|
+| GET    | api/tasks    | Get all tasks           | https://tasks.yuuns.tech/api/tasks                               |
+| GET    | api/tasks/id | Get a specific task     | https://tasks.yuuns.tech/api/tasks/9                             |
+| POST   | api/tasks    | Create a new task       | https://tasks.yuuns.tech/api/tasks                               |
+| PUT    | api/tasks/id | Update an existing task | https://tasks.yuuns.tech/api/tasks/9                             |
+| DELETE | api/tasks/id | Delete an existing task | https://tasks.yuuns.tech/api/tasks/9                             |
 
 ## Stack:
 
@@ -39,4 +35,4 @@ https://tasks.yuuns.tech/api/tasks/9
 https://github.com/YuunsGit/task-manager/blob/main/postman_collection.json
 
 ## Test:
-Run `npm test` to run tests.
+Run `npm test` to run tests. **Jest** and **Supertest** have been used for unit testing. Tests cover invalid/empty inputs and successful queries.
