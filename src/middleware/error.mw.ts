@@ -1,4 +1,5 @@
 import { NextFunction, Request, Response } from "express";
+import { PrismaError } from "../type.js";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const handleError = (err: Error, req: Request, res: Response, next: NextFunction) => {
@@ -14,8 +15,24 @@ const handleError = (err: Error, req: Request, res: Response, next: NextFunction
 
 const handle404 = (req: Request, res: Response, next: NextFunction) => {
     res.status(404);
-    const error = new Error("404 Not Found, go to /api/tasks for API routes");
+    const error = new Error("404 Not Found, go to /api/tasks");
     next(error);
 };
 
-export { handleError, handle404 };
+const handleDbException = (err: PrismaError, req: Request, res: Response, next: NextFunction) => {
+    if (err.code) {
+        switch (err.code) {
+            case "P2025":
+                return res.status(404).json({
+                    message: "Task does not exist"
+                });
+            default:
+                return res.status(500).json({
+                    message: "Database exception"
+                });
+        }
+    }
+    next(err);
+};
+
+export { handleError, handle404, handleDbException };

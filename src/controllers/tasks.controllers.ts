@@ -67,12 +67,6 @@ const updateTask = async (req: Request, res: Response, next: NextFunction) => {
             }
         });
 
-        if (!task) {
-            const err = new Error("Task does not exist");
-            res.status(404);
-            return next(err);
-        }
-
         res.status(200).json(task);
     } catch (error) {
         next(error);
@@ -83,17 +77,11 @@ const deleteTask = async (req: Request, res: Response, next: NextFunction) => {
     try {
         const { id } = req.params;
 
-        const task = await prisma.task.delete({
+        await prisma.task.delete({
             where: {
                 id: parseInt(id)
             },
         });
-
-        if (!task) {
-            const err = new Error("Task does not exist");
-            res.status(404);
-            return next(err);
-        }
 
         res.status(204).send();
     } catch (error) {

@@ -3,3 +3,7 @@ export type Task = {
     description: string;
     dueDate: Date;
 }
+
+export interface PrismaError extends Error {
+    code: string
+}
