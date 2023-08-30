@@ -8,6 +8,7 @@ on:
 
 jobs:
   build:
+    environment: task-management-api
     runs-on: ubuntu-latest
     strategy:
       matrix:
