@@ -22,7 +22,7 @@ jobs:
       - name: create env file
         run: |
           touch .env
-          echo ENGINE_API_KEY=${{ secrets.ENGINE_API_KEY }} >> .env
+          echo DATABASE_URL=${{ secrets.DATABASE_URL }} >> .env
       - run: npm ci
       - run: npm run build --if-present
       - run: npm test
