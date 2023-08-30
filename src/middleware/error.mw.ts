@@ -3,7 +3,7 @@ import { PrismaError } from "../type.js";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const handleError = (err: Error, req: Request, res: Response, next: NextFunction) => {
-    res.status(500).type("json").send(
+    res.status(res.statusCode || 500).type("json").send(
         JSON.stringify(process.env.NODE_ENV === "development" ? {
             message: err.message,
             stack: err.stack
