@@ -13,7 +13,7 @@ const createTask = async (req: Request, res: Response, next: NextFunction) => {
             }
         });
 
-        res.status(201).json(task);
+        res.status(201).type("json").send(JSON.stringify(task, null, 2) + "\n");
     } catch (error) {
         next(error);
     }
@@ -35,7 +35,7 @@ const getTask = async (req: Request, res: Response, next: NextFunction) => {
             return next(err);
         }
 
-        res.status(200).json(task);
+        res.status(200).type("json").send(JSON.stringify(task, null, 2) + "\n");
     } catch (error) {
         next(error);
     }
@@ -43,9 +43,9 @@ const getTask = async (req: Request, res: Response, next: NextFunction) => {
 
 const getTasks = async (req: Request, res: Response, next: NextFunction) => {
     try {
-        const task = await prisma.task.findMany({});
+        const tasks = await prisma.task.findMany({});
 
-        res.status(200).json(task);
+        res.status(200).type("json").send(JSON.stringify(tasks, null, 2) + "\n");
     } catch (error) {
         next(error);
     }
@@ -67,7 +67,7 @@ const updateTask = async (req: Request, res: Response, next: NextFunction) => {
             }
         });
 
-        res.status(200).json(task);
+        res.status(200).type("json").send(JSON.stringify(task, null, 2) + "\n");
     } catch (error) {
         next(error);
     }
