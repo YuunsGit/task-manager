@@ -19,20 +19,29 @@ https://documenter.getpostman.com/view/19399613/2s9Y5ZvMbe
 
 ## Stack:
 
-- **Node.js** as a runtime environment
-- **TypeScript** for typesafe development
-- **Express** as a web framework
-- **PostgreSQL** for a relational database
-- **Prisma** as an ORM
-- **Joi** for input validation
-- **Jest** and **Supertest** for unit testing
-- **Render** for deployment
+- **<ins>Node.js</ins>** as a runtime environment
+- **<ins>TypeScript</ins>** for typesafe development
+- **<ins>Express</ins>** as a web framework
+- **<ins>PostgreSQL</ins>** for a relational database
+- **<ins>Prisma</ins>** as an ORM
+- **<ins>Joi</ins>** for input validation
+- **<ins>Jest</ins>** and **<ins>Supertest</ins>** for unit testing
+- **<ins>Heroku</ins>** for app deployment
+- **<ins>Render</ins>** for database deployment
+- **<ins>GitHub Actions</ins>** for CI/CD pipeline
 
 ## Installation:
+
 1. Clone the repository
 2. Install the dependencies with `npm install`
 3. Create `.env` file with provided `DATABASE_URL`
 4. Run the application with `npm run dev`
 
 ## Test:
+
 Run `npm test` to run tests. **Jest** and **Supertest** have been used for unit testing. Tests cover invalid/empty inputs and successful queries.
+
+## Pipeline:
+
+The app does not proceed to the deployment phase until the CI/CD pipeline is successfully completed. See the GitHub workflow steps:
+https://github.com/YuunsGit/task-manager/blob/main/.github/workflows/node.js.yml
