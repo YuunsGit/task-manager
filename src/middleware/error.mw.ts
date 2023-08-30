@@ -3,14 +3,13 @@ import { PrismaError } from "../type.js";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const handleError = (err: Error, req: Request, res: Response, next: NextFunction) => {
-    res.status(res.statusCode || 500).json(
-        process.env.NODE_ENV === "development" ? {
+    res.status(500).type("json").send(
+        JSON.stringify(process.env.NODE_ENV === "development" ? {
             message: err.message,
             stack: err.stack
         } : {
             message: err.message,
-        }
-    );
+        }, null, 2) + "\n");
 };
 
 const handle404 = (req: Request, res: Response, next: NextFunction) => {
@@ -23,13 +22,13 @@ const handleDbException = (err: PrismaError, req: Request, res: Response, next: 
     if (err.code) {
         switch (err.code) {
             case "P2025":
-                return res.status(404).json({
+                return res.status(404).type("json").send(JSON.stringify({
                     message: "Task does not exist"
-                });
+                }, null, 2) + "\n");
             default:
-                return res.status(500).json({
+                return res.status(500).type("json").send(JSON.stringify({
                     message: "Database exception"
-                });
+                }, null, 2) + "\n");
         }
     }
     next(err);
