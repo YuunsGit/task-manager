@@ -14,17 +14,15 @@ jobs:
         node-version: [ 18.x ]
     steps:
       - uses: actions/checkout@v3
+      - name: create env file
+        run: |
+          touch .env
+          echo DATABASE_URL=${{ secrets.DATABASE_URL }} >> .env
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-      - name: Create .env with Github Secrets and run script
-        run: |
-          touch .env
-          echo DATABASE_URL=$DATABASE_URL >> .env
-        env:
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
       - run: npm ci
       - run: npm run build --if-present
       - run: npm test
