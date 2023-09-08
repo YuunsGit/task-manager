@@ -1,18 +1,18 @@
-# Task Management API Documentation
+# Task Management API
 
-This documentation provides an overview of the Task Management API https://tasks.yuuns.tech. The API allows users to manage tasks by providing endpoints for creating, retrieving, updating, and deleting tasks.
+This documentation provides an overview of the Task Management API https://tasks.yunusemre.dev/api/tasks. The API allows users to manage tasks by providing endpoints for creating, retrieving, updating, and deleting tasks.
 
 ## Endpoints
 
 The API has the following endpoints:
 
-| Method | Endpoint     | Description             | Example                                                          |
+| Method | Endpoint     | Description             | URL                                                          |
 |--------|--------------|-------------------------|------------------------------------------------------------------|
-| GET    | api/tasks    | Get all tasks           | https://tasks.yuuns.tech/api/tasks                               |
-| GET    | api/tasks/id | Get a specific task     | https://tasks.yuuns.tech/api/tasks/9                             |
-| POST   | api/tasks    | Create a new task       | https://tasks.yuuns.tech/api/tasks                               |
-| PUT    | api/tasks/id | Update an existing task | https://tasks.yuuns.tech/api/tasks/9                             |
-| DELETE | api/tasks/id | Delete an existing task | https://tasks.yuuns.tech/api/tasks/9                             |
+| GET    | api/tasks    | Get all tasks           | https://tasks.yunusemre.dev/api/tasks                               |
+| GET    | api/tasks/id | Get a specific task     | https://tasks.yunusemre.dev/api/tasks/9                             |
+| POST   | api/tasks    | Create a new task       | https://tasks.yunusemre.dev/api/tasks                               |
+| PUT    | api/tasks/id | Update an existing task | https://tasks.yunusemre.dev/api/tasks/9                             |
+| DELETE | api/tasks/id | Delete an existing task | https://tasks.yunusemre.dev/api/tasks/9                             |
 
 ## Postman collection:
 https://documenter.getpostman.com/view/19399613/2s9Y5ZvMbe
